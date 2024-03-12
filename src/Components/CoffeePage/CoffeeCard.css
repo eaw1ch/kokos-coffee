@@ -37,7 +37,7 @@ input[type='radio'] {
 .custom-radio {
     display: inline-block;
     box-sizing: border-box;
-    width: 56px;
+    width: 60px;
 
     padding: 5px;
     margin-right: 5px;
