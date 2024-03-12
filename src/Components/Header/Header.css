@@ -1,0 +1,69 @@
+header {
+    display: flex;
+    align-items: center;
+    height: 120px;
+
+    margin: 0 auto;
+    width: 90%;
+
+    position: absolute;
+    z-index: 3;
+
+    left: 0;
+    right: 0;
+    font-size: 22px;
+    color: white;
+}
+
+.header__block {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+    > li {
+        margin-right: 25px;
+    }
+    > li:last-child {
+        margin-right: 0;
+    }
+}
+
+.header__block-element {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.header__block-element:hover {
+    cursor: pointer;
+    color: wheat;
+    -webkit-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+    -moz-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+    text-shadow: 1px 1px 1px rgb(245, 209, 133);
+}
+
+.underline:after {
+    content: '';
+    display: block;
+    position: relative;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; /* Высота линии */
+    background-color: wheat; /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.underline:hover:after {
+    content: '';
+    width: 100%;
+    display: block;
+    position: relative;
+    left: 0;
+    bottom: -3px;
+    height: 2px; /* Высота линии */
+    background-color: wheat; /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.5s; /* Время эффекта */
+}
+
+.logo {
+    height: 70%;
+}
