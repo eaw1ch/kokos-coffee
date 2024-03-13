@@ -45,7 +45,7 @@
 }
 
 .swiper {
-    display: none;
+    display: flex;
     width: 100%;
     overflow: hidden;
     height: 370px;
@@ -123,9 +123,6 @@ input[type='radio']:checked + .custom-filter-radio {
     }
     .coffeeblock-items {
         display: none;
-    }
-    .swiper {
-        display: flex;
     }
     .filter-button {
         display: grid;

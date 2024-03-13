@@ -11,6 +11,8 @@ import coffee from '../../data/coffee'
 import CoffeeCard from './CoffeeCard'
 
 function CoffeePage() {
+    const [width, setWidth] = useState(window.innerWidth)
+    const breakpoint = 600
     const [filter, setFilter] = useState('coffee')
     const [filteredCards, setFilteredCards] = useState([])
 
@@ -20,6 +22,16 @@ function CoffeePage() {
         const filtered = coffee.filter((coffee) => coffee.type === filter)
         setFilteredCards(filtered)
     }, [filter])
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth)
+        // subscribe to window resize event "onComponentDidMount"
+        window.addEventListener('resize', handleResizeWindow)
+        return () => {
+            // unsubscribe "onComponentDestroy"
+            window.removeEventListener('resize', handleResizeWindow)
+        }
+    }, [])
 
     const handleCategoryChange = () => {
         swiperRef.current.swiper.slideTo(0) // Сбросить текущий слайд при изменении категории
@@ -86,29 +98,31 @@ function CoffeePage() {
                         width: '100%',
                     }}
                 >
-                    <div className="coffeeblock-items">
-                        {filteredCards.map((item) => {
-                            return <CoffeeCard key={item.id} item={item} />
-                        })}
-                    </div>
-
-                    <Swiper
-                        ref={swiperRef}
-                        modules={[Pagination]}
-                        slidesPerView={1}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        className="swiper"
-                    >
-                        {filteredCards.map((item) => {
-                            return (
-                                <SwiperSlide key={item.id}>
-                                    <CoffeeCard item={item} />
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Swiper>
+                    {width > breakpoint ? (
+                        <div className="coffeeblock-items">
+                            {filteredCards.map((item) => {
+                                return <CoffeeCard key={item.id} item={item} />
+                            })}
+                        </div>
+                    ) : (
+                        <Swiper
+                            ref={swiperRef}
+                            modules={[Pagination]}
+                            slidesPerView={1}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            className="swiper"
+                        >
+                            {filteredCards.map((item) => {
+                                return (
+                                    <SwiperSlide key={item.id}>
+                                        <CoffeeCard item={item} />
+                                    </SwiperSlide>
+                                )
+                            })}
+                        </Swiper>
+                    )}
                 </div>
             </section>
         </main>

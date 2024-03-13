@@ -44,14 +44,12 @@ input[type='radio'] {
 
     border: 1px solid #ccc;
     border-radius: 5px;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 500;
 
     text-align: center;
     transition: all 0.4s;
-
-    -webkit-appearance: none;
-    appearance: none;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -61,13 +59,14 @@ input[type='radio'] {
     user-select: none;
 }
 
+.custom-radio:hover {
+    background-color: #2e2e2e;
+}
+
 input[type='radio']:checked + .custom-radio {
     border: none;
     background-color: white;
     color: #1c1c1c;
-
-    -webkit-appearance: radio;
-    appearance: radio;
 }
 
 .item-price {
@@ -79,12 +78,5 @@ input[type='radio']:checked + .custom-radio {
 @media screen and (max-width: 600px) {
     .coffeecard {
         margin: auto;
-    }
-}
-
-@media (hover: hover) {
-    .custom-radio:hover {
-        background-color: #2e2e2e;
-        cursor: pointer;
     }
 }
