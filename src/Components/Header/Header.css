@@ -32,14 +32,6 @@ header {
     transition: all 0.2s ease;
 }
 
-.header__block-element:hover {
-    cursor: pointer;
-    color: wheat;
-    -webkit-text-shadow: 1px 1px 1px rgb(245, 209, 133);
-    -moz-text-shadow: 1px 1px 1px rgb(245, 209, 133);
-    text-shadow: 1px 1px 1px rgb(245, 209, 133);
-}
-
 .underline:after {
     content: '';
     display: block;
@@ -52,18 +44,56 @@ header {
     transition: width 0.5s; /* Время эффекта */
 }
 
-.underline:hover:after {
-    content: '';
-    width: 100%;
-    display: block;
-    position: relative;
-    left: 0;
-    bottom: -3px;
-    height: 2px; /* Высота линии */
-    background-color: wheat; /* Цвет подчеркивания при появлении линии*/
-    transition: width 0.5s; /* Время эффекта */
-}
-
 .logo {
     height: 70%;
+}
+
+@media (hover: hover) {
+    .header__block-element:hover {
+        cursor: pointer;
+        color: wheat;
+        -webkit-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+        -moz-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+        text-shadow: 1px 1px 1px rgb(245, 209, 133);
+    }
+
+    .underline:hover:after {
+        content: '';
+        width: 100%;
+        display: block;
+        position: relative;
+        left: 0;
+        bottom: -3px;
+        height: 2px; /* Высота линии */
+        background-color: wheat; /* Цвет подчеркивания при появлении линии*/
+        transition: width 0.5s; /* Время эффекта */
+    }
+}
+
+@media (hover: none) {
+    .header__block-element:active {
+        cursor: pointer;
+        color: wheat;
+        -webkit-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+        -moz-text-shadow: 1px 1px 1px rgb(245, 209, 133);
+        text-shadow: 1px 1px 1px rgb(245, 209, 133);
+    }
+
+    .underline:active:after {
+        content: '';
+        width: 100%;
+        display: block;
+        position: relative;
+        left: 0;
+        bottom: -3px;
+        height: 2px;
+        background-color: wheat;
+        transition: width 0.5s;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: none;
+    }
 }

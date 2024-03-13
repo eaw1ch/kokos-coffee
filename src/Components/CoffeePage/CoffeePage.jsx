@@ -1,5 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+
+import 'swiper/css'
 import './CoffeePage.css'
+import 'swiper/css/pagination'
 
 import coffee from '../../data/coffee'
 
@@ -9,20 +14,28 @@ function CoffeePage() {
     const [filter, setFilter] = useState('coffee')
     const [filteredCards, setFilteredCards] = useState([])
 
+    const swiperRef = useRef(null)
+
     useEffect(() => {
         const filtered = coffee.filter((coffee) => coffee.type === filter)
         setFilteredCards(filtered)
     }, [filter])
 
+    const handleCategoryChange = () => {
+        swiperRef.current.swiper.slideTo(0) // Сбросить текущий слайд при изменении категории
+        swiperRef.current.swiper.update() // Обновить карусель
+    }
+
     const handleRadioChange = useCallback((e) => {
         setFilter(e.target.value)
+        handleCategoryChange()
     }, [])
 
     return (
         <main className="coffeemain" id="coffee-menu">
             <h1 className="coffeemain-header">Напитки</h1>
             <div className="filter-button">
-                <label>
+                <label className="filter-input">
                     <input
                         type="radio"
                         name="filter"
@@ -32,7 +45,7 @@ function CoffeePage() {
                     />
                     <span className="custom-filter-radio">Кофе</span>
                 </label>
-                <label>
+                <label className="filter-input">
                     <input
                         type="radio"
                         name="filter"
@@ -42,7 +55,7 @@ function CoffeePage() {
                     />
                     <span className="custom-filter-radio">Авторские</span>
                 </label>
-                <label>
+                <label className="filter-input">
                     <input
                         type="radio"
                         name="filter"
@@ -52,7 +65,7 @@ function CoffeePage() {
                     />
                     <span className="custom-filter-radio">Не кофе</span>
                 </label>
-                <label>
+                <label className="filter-input">
                     <input
                         type="radio"
                         name="filter"
@@ -60,7 +73,7 @@ function CoffeePage() {
                         checked={filter === 'juice'}
                         onChange={handleRadioChange}
                     />
-                    <span className="custom-filter-radio">Соки</span>
+                    <span className="custom-filter-radio nomargin">Соки</span>
                 </label>
             </div>
 
@@ -78,6 +91,24 @@ function CoffeePage() {
                             return <CoffeeCard key={item.id} item={item} />
                         })}
                     </div>
+
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Pagination]}
+                        slidesPerView={1}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        className="swiper"
+                    >
+                        {filteredCards.map((item) => {
+                            return (
+                                <SwiperSlide key={item.id}>
+                                    <CoffeeCard item={item} />
+                                </SwiperSlide>
+                            )
+                        })}
+                    </Swiper>
                 </div>
             </section>
         </main>
