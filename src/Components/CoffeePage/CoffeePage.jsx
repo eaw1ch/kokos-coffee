@@ -34,8 +34,8 @@ function CoffeePage() {
     }, [])
 
     const handleCategoryChange = () => {
-        swiperRef.current.swiper.slideTo(0) // Сбросить текущий слайд при изменении категории
-        swiperRef.current.swiper.update() // Обновить карусель
+        swiperRef.current?.swiper.slideTo(0) // Сбросить текущий слайд при изменении категории
+        swiperRef.current?.swiper.update() // Обновить карусель
     }
 
     const handleRadioChange = useCallback((e) => {
