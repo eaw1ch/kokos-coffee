@@ -50,6 +50,9 @@ input[type='radio'] {
     text-align: center;
     transition: all 0.4s;
 
+    -webkit-appearance: none;
+    appearance: none;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -67,6 +70,9 @@ input[type='radio']:checked + .custom-radio {
     border: none;
     background-color: white;
     color: #1c1c1c;
+
+    -webkit-appearance: radio;
+    appearance: radio;
 }
 
 .item-price {
