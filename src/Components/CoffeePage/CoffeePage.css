@@ -96,6 +96,7 @@ input[type='radio'] {
 
 .custom-filter-radio:hover {
     background-color: rgb(235, 235, 235);
+    cursor: pointer;
 }
 
 input[type='radio']:checked + .custom-filter-radio {
