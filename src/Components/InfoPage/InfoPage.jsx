@@ -37,13 +37,13 @@ function InfoPage() {
                                 alt=""
                             />
                             <span className="statistic-text">
-                                200+ положительных отзывов
+                                600+ положительных отзывов
                             </span>
                         </div>
                         <div className="statistic-block">
                             <img className="statistic-icon" src={cup} alt="" />
                             <span className="statistic-text">
-                                10 000 чашек приготовленного кофе
+                                25 000 чашек приготовленного кофе
                             </span>
                         </div>
                         <div className="statistic-block">
