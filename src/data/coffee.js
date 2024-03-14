@@ -61,7 +61,7 @@ const coffee = [
             { size: 400, price: 210, key: 13 },
         ],
         type: 'coffee',
-        photo: 'https://athome.starbucks.com/sites/default/files/2021-06/1_CAH_CaffeMocha_Hdr_2880x16602.jpg',
+        photo: 'https://about-tea.ru/wp-content/uploads/7/9/2/79299e26c73e4454ecf28392d56875f8.jpeg',
     },
 
     {
@@ -85,7 +85,7 @@ const coffee = [
             { size: 400, price: 290, key: 19 },
         ],
         type: 'juice',
-        photo: 'https://www.thesun.co.uk/wp-content/uploads/2019/11/NINTCHDBPICT000528626045.jpg',
+        photo: 'https://wallpapercrafter.com/desktop7/1827393-juice-straw-orange-juice-drink-orange-drink-fruit.jpg',
     },
 
     {
@@ -149,7 +149,7 @@ const coffee = [
         name: 'Смузи',
         info: [{ size: 300, price: 190, key: 33 }],
         type: 'nocoffee',
-        photo: 'https://sneg.top/uploads/posts/2023-03/1678633116_sneg-top-p-molochnie-kokteili-na-belom-fone-vkontakte-34.jpg',
+        photo: 'https://m.fitforfun.de/files/images/201409/1/fotolia_62583226,168076_3x2_n.jpg',
     },
 
     {
@@ -198,7 +198,7 @@ const coffee = [
         name: 'Раф фисташка',
         info: [{ size: 300, price: 250, key: 41 }],
         type: 'author',
-        photo: 'https://i.pinimg.com/originals/11/99/28/1199282d3834f371dec4abbf39b09f1d.jpg',
+        photo: 'https://www.pngkit.com/png/detail/284-2845310_ingredients-latte.png',
     },
 
     {
