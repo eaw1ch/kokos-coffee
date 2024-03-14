@@ -85,7 +85,7 @@ const coffee = [
             { size: 400, price: 290, key: 19 },
         ],
         type: 'juice',
-        photo: 'https://wallpapercrafter.com/desktop7/1827393-juice-straw-orange-juice-drink-orange-drink-fruit.jpg',
+        photo: 'https://img.freepik.com/premium-photo/slices-of-orange-and-glass-of-orange-juice-on-white-background_55716-3.jpg',
     },
 
     {
