@@ -103,6 +103,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .header {
+        height: 80px;
+    }
     .navigation {
         margin: 0;
         /* padding: 30px; */
@@ -153,13 +156,10 @@
         margin-left: auto;
         border: none;
         background-color: transparent;
-        align-self: flex-start;
-        margin-top: 30px;
     }
 
     .menu-icon {
         width: 25px;
-        height: 100%;
     }
 
     .logo {
