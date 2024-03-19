@@ -7,11 +7,17 @@ import { ReactComponent as Burger } from '../../assets/icons/hamburger-menu.svg'
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
+
+    document.body.style.overflowY = `${isOpen ? 'hidden' : 'visible'}`
     return (
         <header className="header">
-            <img className="logo" src={logo} alt="" />
+            <img className="logo" src={logo} alt="logo" />
             <nav className={`navigation ${isOpen ? 'active' : ''}`}>
                 <ul className="header__block">
+                    <div className="header__contacts">
+                        <img src={logo} alt="logo" />
+                    </div>
+
                     <li className="header__block-element">
                         <Link
                             className="underline"

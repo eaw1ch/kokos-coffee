@@ -20,23 +20,25 @@ function CoffeePage() {
     const swiperRef = useRef(null)
 
     useEffect(() => {
-        const filtered = coffee.filter((coffee) => coffee.type === filter)
-        setFilteredCards(filtered)
+        if (Array.isArray(coffee)) {
+            const filtered = coffee.filter((coffee) => coffee.type === filter)
+            setFilteredCards(filtered)
+        }
     }, [filter])
 
     useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth)
-        // subscribe to window resize event "onComponentDidMount"
         window.addEventListener('resize', handleResizeWindow)
         return () => {
-            // unsubscribe "onComponentDestroy"
             window.removeEventListener('resize', handleResizeWindow)
         }
     }, [])
 
     const handleCategoryChange = () => {
-        swiperRef.current?.swiper?.slideTo(0) // Сбросить текущий слайд при изменении категории
-        swiperRef.current?.swiper?.update() // Обновить карусель
+        if (window.innerWidth <= breakpoint) {
+            swiperRef.current?.swiper.slideTo(0) // Сбросить текущий слайд при изменении категории
+            swiperRef.current?.swiper.update() // Обновить карусель
+        }
     }
 
     const handleRadioChange = useCallback((e) => {
