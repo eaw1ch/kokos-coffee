@@ -150,6 +150,12 @@
     }
 
     .header__contacts > img {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header__contacts > img {
         width: 75%;
     }
 }
