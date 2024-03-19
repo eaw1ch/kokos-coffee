@@ -12,10 +12,6 @@ function Header() {
         document.body.style.overflowY = `${isOpen ? 'hidden' : 'visible'}`
     }
 
-    if (window.innerWidth > 600) {
-        document.body.style.overflowY = 'visible'
-    }
-
     return (
         <header className="header">
             <img className="logo" src={logo} alt="logo" />
